@@ -1,4 +1,4 @@
---- Operaciiones basicas para Lista ---
+--- Operaciiones para Listas ---
 head :: [a] -> a             --- devuelve el primer elemento de la lista ---
 last :: [a] -> a             --- devuelve el ultimo elemento de la lista ---
 tail :: [a] -> [a]           --- devuelve la lista menos el primero elemento ---
