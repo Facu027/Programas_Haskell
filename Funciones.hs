@@ -27,6 +27,6 @@ snd :: (a, b) -> b            --- devuelve el segundo componente de la tupla ---
 zip :: [a] -> [b] -> [(a, b)] --- toma dos lista y las empareja formando una lista de tuplas ---
 
 --- Operacines para Matrizes ---
-transpose :: [[a]] -> [[a]] --- convierte las filas de una matriz en colubnas y viceversa ---
-concat :: [[a]] -> [a]      --- convierte una matriz en una lista simple (aplanar) ---
+transpose :: [[a]] -> [[a]]           --- convierte las filas de una matriz en colubnas y viceversa ---
+concat :: [[a]] -> [a]      -         -- convierte una matriz en una lista simple (aplanar) ---
 concatMap :: (a -> [b]) -> [a] -> [b] --- aplica primero un map y luego un concat ---
