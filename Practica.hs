@@ -25,8 +25,8 @@ productosDisponibles ((nom, pre, stok):xs) n
     | (stok > 0 && pre <= n) = nom : productosDisponibles xs n
     | otherwise = productosDisponibles xs n
 
-codicacionfTranspuesta :: String -> Int -> String
-codicacionfTranspuesta x n = codificar (cad2Matriz x n)
+codificacionTranspuesta :: String -> Int -> String
+codificacionTranspuesta x n = codificar (cad2Matriz x n)
 
 codificar :: [String] -> String
 codificar [] = []
