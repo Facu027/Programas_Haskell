@@ -83,3 +83,15 @@ m2c (x:xs) = x ++ m2c xs
 decodificarTransposicion2 :: String -> Int -> String
 decodificarTransposicion2 x n = sacoCaracter (m2c (transpose (c2m x fila)))
     where fila = div (length x) n
+
+promedios :: [[Integer]] -> [Integer]
+promedios x = map (promedio x)
+
+promediosSinAplazos :: [[Integer]] -> [Integer]
+pormediosSinAplazos x = map (pormedio . filter (>=4) ) x
+
+promedio :: [Integer]  -> Float
+promedio x  = (sum x) / (lengt x)
+
+majorNota :: [[Integer]] -> [Integer]
+mejorNota x = filter (<=10 x)

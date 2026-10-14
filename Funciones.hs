@@ -28,5 +28,5 @@ zip :: [a] -> [b] -> [(a, b)] --- toma dos lista y las empareja formando una lis
 
 --- Operacines para Matrizes ---
 transpose :: [[a]] -> [[a]]           --- convierte las filas de una matriz en colubnas y viceversa ---
-concat :: [[a]] -> [a]      -         -- convierte una matriz en una lista simple (aplanar) ---
+concat :: [[a]] -> [a]                --- convierte una matriz en una lista simple (aplanar) ---
 concatMap :: (a -> [b]) -> [a] -> [b] --- aplica primero un map y luego un concat ---
