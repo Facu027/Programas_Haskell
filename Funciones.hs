@@ -7,9 +7,11 @@ langth :: [a] -> Int         --- devuelve el tamaño de la lista ---
 null :: [a] -> Bool          --- verifica si una lista esta vacia ---
 take :: Int -> [a] -> [a]    --- toma los primeros n elementos ---
 drop :: Int -> [a] -> [a]    --- elimina los primeros n elementos ---
+nub :: Eq a => [a] -> [a]    --- elimina los elementos repetido de la lista ---
 reverse :: [a] -> [a]        --- invierte el orden la los elemento de la lista ---
 replicate :: Int -> a -> [a] --- crea una lista de n elementos ---
-repeat :: a -> [a]           --- crea una lista infinita de el mismo elemento---
+repeat :: a -> [a]           --- crea una lista infinita de el mismo elemento ---
+maximun :: Ord a => [a] -> a --- devuelve el numero mas grande de la lista ---
 
 --- Funciones de Orden superios ---
 map :: (a -> b) -> [a] -> [b]           --- aplica una funcion a cada elemento de la lista y devuelde la lista modificada ---
