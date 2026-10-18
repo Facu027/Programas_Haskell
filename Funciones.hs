@@ -1,17 +1,21 @@
 --- Operaciiones para Listas ---
-head :: [a] -> a             --- devuelve el primer elemento de la lista ---
-last :: [a] -> a             --- devuelve el ultimo elemento de la lista ---
-tail :: [a] -> [a]           --- devuelve la lista menos el primero elemento ---
-init :: [a] -> [a]           --- devuelve la lista menos el ultimo elemento ---
-langth :: [a] -> Int         --- devuelve el tamaño de la lista ---
-null :: [a] -> Bool          --- verifica si una lista esta vacia ---
-take :: Int -> [a] -> [a]    --- toma los primeros n elementos ---
-drop :: Int -> [a] -> [a]    --- elimina los primeros n elementos ---
-nub :: Eq a => [a] -> [a]    --- elimina los elementos repetido de la lista ---
-reverse :: [a] -> [a]        --- invierte el orden la los elemento de la lista ---
-replicate :: Int -> a -> [a] --- crea una lista de n elementos ---
-repeat :: a -> [a]           --- crea una lista infinita de el mismo elemento ---
-maximun :: Ord a => [a] -> a --- devuelve el numero mas grande de la lista ---
+head :: [a] -> a                       --- devuelve el primer elemento de la lista ---
+last :: [a] -> a                       --- devuelve el ultimo elemento de la lista ---
+tail :: [a] -> [a]                     --- devuelve la lista menos el primero elemento ---
+init :: [a] -> [a]                     --- devuelve la lista menos el ultimo elemento ---
+langth :: [a] -> Int                   --- devuelve el tamaño de la lista ---
+null :: [a] -> Bool                    --- verifica si una lista esta vacia ---
+take :: Int -> [a] -> [a]              --- toma los primeros n elementos ---
+takeWhile :: (a -> Bool) -> [a] -> [a] --- toma los elementos hasta que no se cumple la condicion ---
+drop :: Int -> [a] -> [a]              --- elimina los primeros n elementos ---
+nub :: Eq a => [a] -> [a]              --- elimina los elementos repetido de la lista ---
+reverse :: [a] -> [a]                  --- invierte el orden la los elemento de la lista ---
+replicate :: Int -> a -> [a]           --- crea una lista de n elementos ---
+repeat :: a -> [a]                     --- crea una lista infinita de el mismo elemento ---
+cycle :: [a] -> [a]                    --- crea una lista infinita con la lista que recive ---
+maximun :: Ord a => [a] -> a           --- devuelve el numero mas grande de la lista ---
+elem :: a -> [a] -> Bool               --- devuelve verdadero si el caracter esta en la lista ---
+elemIndex :: Eq a -> [a] -> Bool       --- devuelve la posicion del caracter en la lista ---
 
 --- Funciones de Orden superios ---
 map :: (a -> b) -> [a] -> [b]           --- aplica una funcion a cada elemento de la lista y devuelde la lista modificada ---

@@ -25,6 +25,7 @@ productosDisponibles ((nom, pre, stok):xs) n
     | (stok > 0 && pre <= n) = nom : productosDisponibles xs n
     | otherwise = productosDisponibles xs n
 
+--- Modelo Decodificacion 1 ---
 codificacionTranspuesta :: String -> Int -> String
 codificacionTranspuesta x n = codificar (cad2Matriz x n)
 
@@ -64,6 +65,7 @@ sacoCaracter (x:xs)
     | x == '*' = sacoCaracter xs
     | otherwise = x : sacoCaracter xs
 
+--- Modelo Decodicicacion 2 ---
 codificarTranspuesta2 :: String -> Int -> String
 codificarTranspuesta2 [] _ = []
 codificarTranspuesta2 x n = m2c (transpose (c2m (completar2 x n) n))
@@ -84,6 +86,7 @@ decodificarTransposicion2 :: String -> Int -> String
 decodificarTransposicion2 x n = sacoCaracter (m2c (transpose (c2m x fila)))
     where fila = div (length x) n
 
+--- Modelo Promedios ---
 promedios :: [[Integer]] -> [Integer]
 promedios x = map (promedio x)
 
@@ -95,3 +98,63 @@ promedio x  = (sum x) / (lengt x)
 
 majorNota :: [[Integer]] -> [Integer]
 mejorNota x = filter (<=10 x)
+
+--- Modelo 1: Integración Numérica ---
+integralPolinomi :: [Doubel] -> [Double]
+integralPolinomi [] = []
+integralPolinomio [x] = [x, 0]
+integralPolinomi (x:xs) = (a / (length xs) + 1) : integralPolinomi xs
+
+evaluar1 :: [Double] -> Double -> Double
+evaluar1 [] _ = 0
+evaluar1 (x:xs) n = (x * (n^(length xs)) ) + evaluar xs n
+
+evaluar2 :: [Double] -> Double -> Double
+evaluar2 [] _ = 0
+evaluar2 (x:xs) n = ( (x / p) * (n ^ p) ) + evaluar2 xs n
+    where p = length xs + 1
+
+integralDefinida :: [Doubel] -> Doubel -> Doubel -> Double
+integralDefinida [] _ _ = 0
+integralDefinida polinomio la lb = evaluar1 (integrado lb) - evaluar1 (intergrado la)
+    where integrado = integralPolinomi polinomio
+
+--- Modelo 2: Geometría Analítica ---
+distancia :: (Double, Double) -> (Double, Double) -> Double
+distancia (x1, y1) (x2, y2) = sqrt ((x2 - x1)^2 + (y2 - y1)^2)
+
+longitudRuta :: [(Double, Double)] -> Double
+longitudRuta [] = 0
+longitudRuta [_] = 0
+longitudRuta (p1:p2:xss) = distancia p1 p2 + longitudRuta (p2:xss)
+
+dentroDelRadio :: [(Double, Double)] -> (Double, Double) -> Double -> [(Double, Double)]
+dentroDelRadio [] _ _  = []
+dentroDelRadio (x:xs) punto r
+    | (distancia x punto) <= r = x : dentroDelRadio xs punto r
+    | otherwise = dentroDelRadio xs punto r
+
+--- Modelo 3: Cifrado Dinámico ---
+desplazarChar :: Char -> Int -> Char
+desplazarChar c n
+    | elem ( C L ) = L !! (mod p 26)
+    | otherwise = c
+    where C = toUpper c
+    where L = ['A'..'C']
+    where p = length ( takeWhile (/= C) L ) + n
+
+extenderClave :: [Int] -> Int -> [Int]
+extenderClave [] _ = []
+extenderCleve x n = take n (cycle x)
+
+cifrarDinamico :: String -> [Int] -> String
+cifrarDinamico _ [] = []
+cifrarDinamico [] _  = []
+cifrafDinamico cdn clv = cifrafAux cdn (extenderClave clv (length cdn))
+
+cifrarAux :: Sring -> [Int] -> Srting
+cifrarAux _ [] = []
+cifrarAux [] _ = []
+cifrarAux (x:xs) (y:ys) = (desplazarChar x y) : cifrarAux xs ys
+
+--- Modelo 4: Orden Superior y Datos Meteorológicos ---
