@@ -158,3 +158,53 @@ cifrarAux [] _ = []
 cifrarAux (x:xs) (y:ys) = (desplazarChar x y) : cifrarAux xs ys
 
 --- Modelo 4: Orden Superior y Datos Meteorológicos ---
+temperaturasExtremas :: [[Float]] -> [Float]
+mesesHelados :: [[Float]] -> [[Float]]
+conteoDiasValidos :: [[Float]] -> [Int]
+
+--- Modelo 5: Álgebra Lineal ---
+productoEscalar :: [Double] -> [Double] -> Double
+multiplicarPorEscalar :: Double -> [[Double]] -> [[Double]]
+sumaVectores :: [Double] -> [Double] -> [Double]
+sumaMatrices :: [[Double]] -> [[Double]] -> [[Double]]
+
+--- Modelo 6: Regresión Lineal por Mínimos Cuadrados ---
+sumatorias :: [(Double, Double)] -> (Double, Double, Double, Double)
+calcularM :: [(Double, Double)] -> Double
+ajusteLineal :: [(Double, Double)] -> (Double, Double)
+
+--- Modelo 7: Aproximación por Series de Taylor ---
+factorial :: Integer -> Double
+terminoTaylor :: Double -> Integer -> Double
+aproximarExponencial :: Double -> Integer -> Double
+
+--- Modelo 8: Método de Bisección ---
+biseccion :: (Double -> Double) -> Double -> Double -> Double -> Double
+
+--- Modelo 9: Geometría de Polígonos ---
+calcularTerminos :: [(Double, Double)] -> [Double]
+areaPoligono :: [(Double, Double)] -> Double
+
+--- Modelo 10: Integración Numérica ---
+areaSubyacente :: (Double, Double) -> (Double, Double) -> Double
+integralAproximada :: [(Double, Double)] -> Double
+
+--- Modelo 11: Cifrado Afin ---
+letraANumero :: Char -> Int y numeroALetra :: Int -> Char
+cifrarLetraAfin :: Int -> Int -> Char -> Char
+cifrarAfin :: Int -> Int -> String -> String
+
+--- Modelo 12: Cifrado de Autoclave ---
+generarClave :: String -> String -> String
+cifrarAutoclave :: String -> String -> String
+
+--- Modelo 13: Cifrado por Esteganografia deVectores ---
+codificarAVector :: String -> [Double]
+ocultarConRuido :: String -> [Double] -> [Double]
+recuperarMensaje :: [Double] -> [Double] -> String
+
+--- Modelo 14: Criptoanálisis - Análisis de Frecuencias ---
+contarApariciones :: Char -> String -> Int
+frecuencias :: String -> [Int]
+esVocal :: Char -> Bool
+extraerVocales :: String -> String
